@@ -1,0 +1,23 @@
+{
+  "name": "select-vk",
+  "version": "1.0.0",
+  "description": "select vk test",
+  "main": "app.js",
+  "dependencies": {
+    "express": "^4.0.0"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "start": "node app"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/plugged/SelectVK.git"
+  },
+  "author": "Vil",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/plugged/SelectVK/issues"
+  },
+  "homepage": "https://github.com/plugged/SelectVK#readme"
+}

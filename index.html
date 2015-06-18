@@ -1,0 +1,90 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+	<link rel="stylesheet" type="text/css" href="/css/select.css">
+	<script type="text/javascript" src="/js/polyfills.js"></script>
+	<script type="text/javascript" src="/js/select.js"></script>
+	<meta charset="utf-8">
+	<title>SelectVK</title>
+</head>
+<body>
+	<div class="block">
+		<h3>Multi select с картинками</h3>
+		<div class="select" id="select1">
+			<label class="select-header clearfix">
+				<div class="caret"></div>
+				<input type="text" placeholder="Введите имя друга">
+			</label>
+		</div>
+		<h3>Single select без картинок</h3>
+		<div class="select" id="select2">
+			<label class="select-header clearfix">
+				<div class="caret"></div>
+				<input type="text" placeholder="Введите имя друга">
+			</label>
+		</div>
+		<h3>Данные Только с клиента</h3>
+		<div class="select" id="select3">
+			<label class="select-header clearfix">
+				<div class="caret"></div>
+				<input type="text" placeholder="Введите имя друга">
+			</label>
+		</div>
+		<h3>Данные Только с сервера</h3>
+		<div class="select" id="select4">
+			<label class="select-header clearfix">
+				<div class="caret"></div>
+				<input type="text" placeholder="Введите имя друга">
+			</label>
+		</div>
+		<br/>
+	</div>
+	<script type="text/javascript">
+		window.onload = function() {
+			var localFriendsList, select1, select2;
+			localFriendsList = [
+				["7232","Анастасия","ИВЭСЭП","https://pp.vk.me/c624724/v624724990/2c88d/XVIpS5Xhr5o.jpg"],
+				["2715","Вадим","","https://pp.vk.me/c625725/v625725449/2ec8e/EZPk8y0Uvno.jpg"],
+				["1471","Артур","СПбУ МВД России","https://pp.vk.me/c620027/v620027821/16299/gbpxOT6kIRw.jpg"],
+				["7035","Максим","СПбГУАП","https://pp.vk.me/c622123/v622123558/2a261/03HYvG_N7IM.jpg"],
+				["1762","Павел","ДонНМУ им. Горького","https://pp.vk.me/c619419/v619419143/2a61/OYNK3s7f3jU.jpg"],
+				["4810","Мария","МГОУ (открытый) - филиал в СПб","https://pp.vk.me/c624221/v624221276/11e33/N6j_5dr8SKg.jpg"],
+				["8420","Дэн","ИИЯ","https://pp.vk.me/c607118/v607118059/4256/RByx_S_sU8E.jpg"],
+				["1405","Антон","","https://pp.vk.me/c625531/v625531410/29e6f/ItNQqRXBRO0.jpg"],
+				["1309","Артурио","СПбГУАП","https://pp.vk.me/c618716/v618716942/1f2bc/eE3YzYpRP2g.jpg"],
+				["6939","Александр","СПбГУАП","https://pp.vk.me/c627624/v627624948/207c/heW8bwV1ghs.jpg"]
+			];
+			
+			select1 = new SelectVK(document.getElementById('select1'),{
+				multiSelect:true,
+				sources: {
+					local: localFriendsList,
+					remote: "/api"
+				},
+				showImages: true
+			});
+			select2 = new SelectVK(document.getElementById('select2'),{
+				multiSelect:false,
+				sources: {
+					local: localFriendsList,
+					remote: "/api"
+				},
+				showImages: false
+			});
+			select2 = new SelectVK(document.getElementById('select3'),{
+				sources: {
+					local: localFriendsList,
+					remote: ""
+				}
+
+			});
+			select2 = new SelectVK(document.getElementById('select4'),{
+				sources: {
+					local: [],
+					remote: "/api"
+				}
+			});
+		};
+	</script>
+</body>
